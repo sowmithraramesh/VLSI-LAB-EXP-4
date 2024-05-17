@@ -5,7 +5,6 @@
  To simulate and synthesis SR, JK, T, D - FLIPFLOP, COUNTER DESIGN using Xilinx ISE.
 
 ## APPARATUS REQUIRED:
-
 Xilinx 14.7
 Spartan6 FPGA
 
@@ -172,6 +171,42 @@ endmodule
 ```
 #### OUTPUT WAVEFORM
 ![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-4/assets/166893766/16686f0b-de0d-4422-b27d-94967ed9ac6e)
+
+## RIPPLE CARRY COUNTER
+![Screenshot 2024-05-17 122740](https://github.com/sowmithraramesh/VLSI-LAB-EXP-4/assets/166893766/7e819821-ff00-41d9-b2a1-4c78d81bc580)
+
+#### VERILOG CODE
+```
+module ripplecounter(q, clk, reset);
+output [3:0] q;
+input clk, reset;
+T_FF tff0(q[0], clk, reset);
+T_FF tff1(q[1], q[0], reset);
+T_FF tff2(q[2], q[1], reset);
+T_FF tff3(q[3], q[2], reset);
+endmodule
+module T_FF(q, clk, reset);
+output q;
+input clk, reset;
+wire d;
+D_FF dff0(q, d, clk, reset);
+not n1(d, q);
+endmodule
+module D_FF(q, d, clk, reset);
+output q;
+input d, clk, reset;
+reg q;
+always @(posedge reset
+or negedge clk)
+if(reset)
+q = 1'b0;
+else
+q = d; 
+endmodule
+```
+#### OUTPUT WAVEFORM
+![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-4/assets/166893766/c401e357-4787-4e42-a82f-03141de526c6)
+
 
 ## RESULT:
  The simulation and synthesis of SR, JK, T, D - FLIPFLOP, COUNTER DESIGN using Xilinx ISE are successfully verified.
