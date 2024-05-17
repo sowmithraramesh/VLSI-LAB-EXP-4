@@ -173,6 +173,8 @@ endmodule
 ![image](https://github.com/sowmithraramesh/VLSI-LAB-EXP-4/assets/166893766/16686f0b-de0d-4422-b27d-94967ed9ac6e)
 
 ## RIPPLE CARRY COUNTER
+
+#### LOGIC DIAGRAM
 ![Screenshot 2024-05-17 122740](https://github.com/sowmithraramesh/VLSI-LAB-EXP-4/assets/166893766/7e819821-ff00-41d9-b2a1-4c78d81bc580)
 
 #### VERILOG CODE
